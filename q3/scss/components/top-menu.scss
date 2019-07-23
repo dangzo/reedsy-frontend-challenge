@@ -1,0 +1,33 @@
+.top-menu {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+
+  li {
+    display: inline-block;
+    float: left;
+    line-height: 2em;
+    margin: auto 14px;
+
+    a {
+      color: $text-color-primary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.active {
+      background-color: $background-color-active;
+      border-radius: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin: auto 7px;
+
+      a {
+        color: $text-color-secondary;
+      }
+    }
+  }
+}

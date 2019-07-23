@@ -4,11 +4,11 @@
   License: none (public domain)
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
+  margin: 0;
+  padding: 0;
   vertical-align: baseline;
 }
 
@@ -19,6 +19,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
 }
 
 ol, ul {
@@ -45,25 +47,79 @@ table {
 }
 
 body {
-  font-family: "Arial", Sans Serif;
-  background-color: #FFFFFF;
   color: #353432;
-  margin-bottom: 50px;
+  background-color: #FAF9F4;
+  font-family: "Arial", Sans Serif;
+  margin-bottom: 70px;
+}
+
+.main {
+  border-radius: 7px;
+  box-shadow: 0px 0px 12px #c4c3be;
+  margin: auto;
+  max-width: 1120px;
+}
+
+.container {
+  margin: auto 35px;
 }
 
 /* Navigation bar
 ================================================== */
-.top-logo {
+.top-actions {
+  font-size: 16px;
+  height: 2.1em;
+  margin: 25px auto;
+  max-width: 1120px;
+}
+.top-actions .container {
+  position: relative;
+}
+.top-actions .top-logo {
   background-color: #CCCCCC;
+  border-radius: 5px;
+  display: inline-block;
+  float: left;
+  line-height: 2em;
+  text-align: center;
+  width: 240px;
+}
+.top-actions .top-menu {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+.top-actions .top-menu li {
+  display: inline-block;
+  float: left;
+  line-height: 2em;
+  margin: auto 14px;
+}
+.top-actions .top-menu li a {
+  color: #353432;
+  text-decoration: none;
+}
+.top-actions .top-menu li a:hover {
+  text-decoration: underline;
+}
+.top-actions .top-menu li.active {
+  background-color: #EEC000;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto 7px;
+}
+.top-actions .top-menu li.active a {
+  color: #FFFFFF;
 }
 
 /* Footer
 ================================================== */
 footer {
   background-color: #292929;
-  position: fixed;
   bottom: 0;
   left: 0;
+  position: fixed;
   width: 100%;
 }
 footer .container {
@@ -71,18 +127,19 @@ footer .container {
 }
 footer .container ul {
   display: inline-block;
-  margin: 17px auto;
+  margin: 25px auto;
 }
 footer .container li {
-  color: #FFFFFF;
+  font-size: 18px;
   float: left;
-  margin: auto 30px;
-  font-size: 16px;
+  margin: auto 45px;
 }
-
-/* Featured
-================================================== */
-/* Top voted
-================================================== */
+footer .container li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+footer .container li a:hover {
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=index.css.map */

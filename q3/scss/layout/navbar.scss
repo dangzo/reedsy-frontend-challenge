@@ -1,6 +1,17 @@
 /* Navigation bar
 ================================================== */
 
-.top-logo {
-  background-color: #CCCCCC;
+.top-actions {
+  font-size: 16px;
+  height: 2.1em;
+  margin: 25px auto;
+  max-width: $main-container-width;
+
+  .container {
+    position: relative;
+  }
+
+  @import '../components/top-logo';
+  @import '../components/top-menu';
+
 }
