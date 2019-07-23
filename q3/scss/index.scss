@@ -1,5 +1,9 @@
-@import './base';
-@import './navbar';
-@import './featured';
-@import './top-voted';
-@import './footer';
+@import './helpers/reset';
+@import './helpers/variables';
+
+@import './layout/page';
+@import './layout/navbar';
+@import './layout/footer';
+
+@import './components/featured';
+@import './components/top-voted';

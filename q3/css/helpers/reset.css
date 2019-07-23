@@ -44,45 +44,4 @@ table {
   border-spacing: 0;
 }
 
-body {
-  font-family: "Arial", Sans Serif;
-  background-color: #FFFFFF;
-  color: #353432;
-  margin-bottom: 50px;
-}
-
-/* Navigation bar
-================================================== */
-.top-logo {
-  background-color: #CCCCCC;
-}
-
-/* Footer
-================================================== */
-footer {
-  background-color: #292929;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-footer .container {
-  text-align: center;
-}
-footer .container ul {
-  display: inline-block;
-  margin: 17px auto;
-}
-footer .container li {
-  color: #FFFFFF;
-  float: left;
-  margin: auto 30px;
-  font-size: 16px;
-}
-
-/* Featured
-================================================== */
-/* Top voted
-================================================== */
-
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=reset.css.map */
