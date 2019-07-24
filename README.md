@@ -1,6 +1,8 @@
+
 # reedsy-frontend-challenge
 
-## Q3 styling
+
+## Q3 styling
 
 Styling is almost pixel perfect (just can't be sure 100%). Used SCSS, with a bit of an anarchic file organisation... but makes sense and works somehow.
 
