@@ -50,18 +50,82 @@ body {
   color: #353432;
   background-color: #FAF9F4;
   font-family: "Arial", Sans Serif;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 46px;
+  line-height: 2em;
+  font-family: "Verdana", sans-serif;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.4em;
+  font-weight: 600;
+  font-family: "Verdana", sans-serif;
+}
+
+img {
+  border-radius: 12px;
+  box-shadow: 0px 0px 8px #c4c3be;
+}
+
+p {
+  margin-bottom: 0.8em;
+  line-height: 1.4em;
+}
+
+.container {
+  margin: auto 35px;
 }
 
 .main {
+  background-color: #FFFFFF;
   border-radius: 7px;
   box-shadow: 0px 0px 12px #c4c3be;
   margin: auto;
   max-width: 1120px;
 }
+.main .container {
+  padding-bottom: 50px;
+}
 
-.container {
-  margin: auto 35px;
+.featured-book {
+  background-color: #FAF9F4;
+  margin-left: -35px;
+  margin-right: -35px;
+  padding-left: 35px;
+  padding-right: 35px;
+  position: relative;
+}
+.featured-book .book-info {
+  padding: 2em;
+  height: 400px;
+}
+.featured-book .book-info .author {
+  margin-bottom: 1.1em;
+  color: #4f4e4b;
+}
+.featured-book .book-info .title {
+  font-size: 32px;
+}
+.featured-book img {
+  margin: 2em 1.4em 2em 0;
+  max-height: 400px;
+  float: left;
+}
+.featured-book .recommended {
+  background-color: #EEC000;
+  border-radius: 0 0 0 10px;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /* Navigation bar

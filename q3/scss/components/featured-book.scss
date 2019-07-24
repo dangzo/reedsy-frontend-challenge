@@ -1,0 +1,43 @@
+@import '../helpers/variables';
+
+.featured-book {
+
+  background-color: $background-color-primary;
+  margin-left: -35px;
+  margin-right: -35px;
+  padding-left: 35px;
+  padding-right: 35px;
+  position: relative;
+
+  .book-info {
+    padding: 2em;
+    height: 400px;
+
+    .author {
+      margin-bottom: 1.1em;
+      color: lighten($text-color-primary, 10%);
+    }
+
+    .title {
+      font-size: 32px;
+    }
+  }
+
+  img {
+    margin: 2em 1.4em 2em 0;
+    max-height: 400px;
+    float: left;
+  }
+
+  .recommended {
+    background-color: $background-color-active;
+    border-radius: 0 0 0 10px;
+    color: $text-color-secondary;
+    display: inline-block;
+    font-size: $font-size - 2;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

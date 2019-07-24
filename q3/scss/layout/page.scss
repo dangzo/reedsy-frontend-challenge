@@ -1,17 +1,19 @@
-body {
-  color: $text-color-primary;
-  background-color: $background-color-primary;
-  font-family: $font-family-main;
-  margin-bottom: 70px;
-}
-
-.main {
-  border-radius: 7px;
-  box-shadow: 0px 0px 12px #c4c3be;
-  margin: auto;
-  max-width: $main-container-width;
-}
+@import '../helpers/generic';
 
 .container {
   margin: auto 35px;
 }
+
+.main {
+  background-color: $background-color-secondary;
+  border-radius: 7px;
+  box-shadow: 0px 0px 12px #c4c3be;
+  margin: auto;
+  max-width: $main-container-width;
+
+  .container {
+    padding-bottom: 50px;
+  }
+}
+
+@import '../components/featured-book';
