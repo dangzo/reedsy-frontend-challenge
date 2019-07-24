@@ -6,6 +6,10 @@ body {
   font-family: $font-family-main;
   margin-bottom: 60px;
   font-size: $font-size;
+
+  @media (max-width: 480px) {
+    margin-bottom: 0;
+  }
 }
 
 h1 {

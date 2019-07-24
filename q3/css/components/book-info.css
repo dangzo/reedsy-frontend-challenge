@@ -2,6 +2,11 @@
   padding: 14px;
   min-height: 350px;
 }
+@media (max-width: 800px) {
+  .book-info {
+    min-height: auto;
+  }
+}
 .book-info .author {
   margin-bottom: 1.1em;
   color: #4f4e4b;

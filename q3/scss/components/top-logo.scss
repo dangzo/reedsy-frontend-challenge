@@ -6,4 +6,8 @@
   line-height: 2em;
   text-align: center;
   width: 230px;
+
+  @media (max-width: 480px) {
+    width: 150px;
+  }
 }

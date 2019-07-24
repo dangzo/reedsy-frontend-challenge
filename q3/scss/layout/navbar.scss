@@ -6,6 +6,17 @@
   margin: 25px auto;
   max-width: $main-container-width;
 
+  @media (max-width: 750px) {
+    width: 100%;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    background: $background-color-primary;
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
   .container {
     position: relative;
   }

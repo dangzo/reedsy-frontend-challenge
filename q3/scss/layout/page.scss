@@ -11,8 +11,12 @@
   margin: auto;
   max-width: $main-container-width;
 
+  @media (max-width: 750px) {
+    margin-top: 90px;
+  }
+
   .container {
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 }
 

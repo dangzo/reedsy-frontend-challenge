@@ -5,6 +5,11 @@ body {
   margin-bottom: 60px;
   font-size: 15px;
 }
+@media (max-width: 480px) {
+  body {
+    margin-bottom: 0;
+  }
+}
 
 h1 {
   font-size: 46px;

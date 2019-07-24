@@ -5,6 +5,8 @@
   position: absolute;
   right: 0;
 
+  @import './hamburger';
+
   li {
     display: inline-block;
     float: left;

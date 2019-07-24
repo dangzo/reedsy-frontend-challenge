@@ -1,9 +1,4 @@
-.top-menu {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-}
-.top-menu input {
+input {
   display: block;
   width: 40px;
   height: 32px;
@@ -18,11 +13,11 @@
   -webkit-touch-callout: none;
 }
 @media (min-width: 750px) {
-  .top-menu input {
+  input {
     display: none;
   }
 }
-.top-menu input:checked ~ ul {
+input:checked ~ ul {
   display: block;
   position: fixed;
   left: 0;
@@ -33,7 +28,8 @@
   background-color: #FAF9F4;
   box-shadow: 0px 8px 8px #cecece;
 }
-.top-menu span {
+
+span {
   display: block;
   width: 33px;
   height: 4px;
@@ -48,22 +44,25 @@
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 @media (min-width: 750px) {
-  .top-menu span {
+  span {
     display: none;
   }
 }
-.top-menu span:first-child {
+
+span:first-child {
   transform-origin: 0% 0%;
 }
-.top-menu span:nth-last-child(2) {
+
+span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
+
 @media (max-width: 750px) {
-  .top-menu ul {
+  ul {
     display: none;
     padding-left: 0 !important;
   }
-  .top-menu ul li {
+  ul li {
     float: right;
     width: 100%;
     margin: 0 !important;
@@ -72,36 +71,13 @@
     padding-left: 15px;
     text-align: right;
   }
-  .top-menu ul li.active {
+  ul li.active {
     background-color: #FAF9F4;
     padding-right: 25px;
   }
-  .top-menu ul li.active a {
+  ul li.active a {
     color: #353432;
   }
 }
-.top-menu li {
-  display: inline-block;
-  float: left;
-  line-height: 2em;
-  margin: auto 14px;
-}
-.top-menu li a {
-  color: #353432;
-  text-decoration: none;
-}
-.top-menu li a:hover {
-  text-decoration: underline;
-}
-.top-menu li.active {
-  background-color: #EEC000;
-  border-radius: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: auto 7px;
-}
-.top-menu li.active a {
-  color: #FFFFFF;
-}
 
-/*# sourceMappingURL=top-menu.css.map */
+/*# sourceMappingURL=hamburger.css.map */

@@ -4,6 +4,10 @@
   padding: 14px;
   min-height: 350px;
 
+  @media (max-width: 800px) {
+    min-height: auto;
+  }
+
   .author {
     margin-bottom: 1.1em;
     color: lighten($text-color-primary, 10%);

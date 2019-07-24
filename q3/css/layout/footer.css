@@ -5,6 +5,11 @@ footer {
   position: fixed;
   width: 100%;
 }
+@media (max-width: 480px) {
+  footer {
+    position: relative;
+  }
+}
 footer .container {
   text-align: center;
 }
@@ -15,6 +20,13 @@ footer .container ul {
 footer .container li {
   float: left;
   margin: auto 30px;
+}
+@media (max-width: 480px) {
+  footer .container li {
+    width: 100%;
+    line-height: 1.6em;
+    margin: 0;
+  }
 }
 footer .container li a {
   color: #FFFFFF;

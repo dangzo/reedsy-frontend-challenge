@@ -7,5 +7,10 @@
   text-align: center;
   width: 230px;
 }
+@media (max-width: 480px) {
+  .top-logo {
+    width: 150px;
+  }
+}
 
 /*# sourceMappingURL=top-logo.css.map */
