@@ -9,23 +9,20 @@
   padding-right: 35px;
   position: relative;
 
+  @import './book-info';
+
   .book-info {
     padding: 2em;
-    height: 400px;
+  }
 
-    .author {
-      margin-bottom: 1.1em;
-      color: lighten($text-color-primary, 10%);
-    }
-
-    .title {
-      font-size: 32px;
-    }
+  .book-info .author,
+  .book-info .synopsis {
+    font-size: $font-size;
   }
 
   img {
     margin: 2em 1.4em 2em 0;
-    max-height: 400px;
+    max-height: 420px;
     float: left;
   }
 

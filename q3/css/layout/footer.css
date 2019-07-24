@@ -1,17 +1,27 @@
-/* Error: Undefined variable.
- *   ,
- * 5 |   background-color: $background-color-footer;
- *   |                     ^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   q3/scss/layout/footer.scss 5:21  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 5 \2502    background-color: $background-color-footer;\a   \2502                      ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   q3/scss/layout/footer.scss 5:21  root stylesheet";
+footer {
+  background-color: #292929;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
 }
+footer .container {
+  text-align: center;
+}
+footer .container ul {
+  display: inline-block;
+  margin: 22px auto;
+}
+footer .container li {
+  float: left;
+  margin: auto 30px;
+}
+footer .container li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+footer .container li a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,27 @@
+.book-info {
+  padding: 14px;
+  min-height: 350px;
+}
+.book-info .author {
+  margin-bottom: 1.1em;
+  color: #4f4e4b;
+  font-size: 14px;
+}
+.book-info h2.title {
+  font-size: 32px;
+}
+.book-info h3.title {
+  line-height: 1.2em;
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.book-info p:last-child {
+  margin-bottom: 0;
+}
+.book-info .synopsis {
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+/*# sourceMappingURL=book-info.css.map */

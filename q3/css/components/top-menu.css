@@ -1,17 +1,30 @@
-/* Error: Undefined variable.
- *    ,
- * 13 |       color: $text-color-primary;
- *    |              ^^^^^^^^^^^^^^^^^^^
- *    '
- *   q3/scss/components/top-menu.scss 13:14  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 13 \2502        color: $text-color-primary;\a    \2502               ^^^^^^^^^^^^^^^^^^^\a    \2575 \a   q3/scss/components/top-menu.scss 13:14  root stylesheet";
+.top-menu {
+  display: inline-block;
+  position: absolute;
+  right: 0;
 }
+.top-menu li {
+  display: inline-block;
+  float: left;
+  line-height: 2em;
+  margin: auto 14px;
+}
+.top-menu li a {
+  color: #353432;
+  text-decoration: none;
+}
+.top-menu li a:hover {
+  text-decoration: underline;
+}
+.top-menu li.active {
+  background-color: #EEC000;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto 7px;
+}
+.top-menu li.active a {
+  color: #FFFFFF;
+}
+
+/*# sourceMappingURL=top-menu.css.map */

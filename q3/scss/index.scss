@@ -1,5 +1,8 @@
+/*
+  All components and helpers get imported through the layout scss
+ */
+
 @import './helpers/reset';
-@import './helpers/variables';
 
 @import './layout/page';
 @import './layout/navbar';

@@ -1,4 +1,4 @@
-@import '../helpers/generic';
+@import '../helpers/base-elements';
 
 .container {
   margin: auto 35px;
@@ -17,3 +17,4 @@
 }
 
 @import '../components/featured-book';
+@import '../components/top-voted';

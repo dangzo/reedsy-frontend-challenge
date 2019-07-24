@@ -1,5 +1,4 @@
-/* Footer
-================================================== */
+@import '../helpers/variables';
 
 footer {
   background-color: $background-color-footer;
@@ -13,13 +12,12 @@ footer {
 
     ul {
       display: inline-block;
-      margin: 25px auto;
+      margin: 22px auto;
     }
 
     li {
-      font-size: 18px;
       float: left;
-      margin: auto 45px;
+      margin: auto 30px;
 
       a {
         color: $text-color-secondary;

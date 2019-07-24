@@ -1,0 +1,58 @@
+.books-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.books-list .book {
+  background-color: #FAF9F4;
+  border-radius: 7px;
+  position: relative;
+  width: 32%;
+}
+.books-list .book .book-info {
+  padding: 14px;
+  min-height: 350px;
+}
+.books-list .book .book-info .author {
+  margin-bottom: 1.1em;
+  color: #4f4e4b;
+  font-size: 14px;
+}
+.books-list .book .book-info h2.title {
+  font-size: 32px;
+}
+.books-list .book .book-info h3.title {
+  line-height: 1.2em;
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.books-list .book .book-info p:last-child {
+  margin-bottom: 0;
+}
+.books-list .book .book-info .synopsis {
+  font-size: 14px;
+  margin-top: 25px;
+}
+.books-list .book img {
+  height: 200px;
+  display: block;
+  margin: 15px auto;
+}
+.books-list .book .position {
+  border: 2px solid #EEC000;
+  border-radius: 50%;
+  color: #EEC000;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 1.5em;
+  text-align: center;
+  vertical-align: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/*# sourceMappingURL=books-list.css.map */

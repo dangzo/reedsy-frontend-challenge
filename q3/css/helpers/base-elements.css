@@ -3,7 +3,7 @@ body {
   background-color: #FAF9F4;
   font-family: "Arial", Sans Serif;
   margin-bottom: 60px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 h1 {
@@ -29,4 +29,4 @@ p {
   line-height: 1.4em;
 }
 
-/*# sourceMappingURL=generic.css.map */
+/*# sourceMappingURL=base-elements.css.map */

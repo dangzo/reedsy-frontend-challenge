@@ -7,19 +7,40 @@
   position: relative;
 }
 .featured-book .book-info {
-  padding: 2em;
-  height: 400px;
+  padding: 14px;
+  min-height: 350px;
 }
 .featured-book .book-info .author {
   margin-bottom: 1.1em;
   color: #4f4e4b;
+  font-size: 14px;
 }
-.featured-book .book-info .title {
+.featured-book .book-info h2.title {
   font-size: 32px;
+}
+.featured-book .book-info h3.title {
+  line-height: 1.2em;
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.featured-book .book-info p:last-child {
+  margin-bottom: 0;
+}
+.featured-book .book-info .synopsis {
+  font-size: 14px;
+  margin-top: 25px;
+}
+.featured-book .book-info {
+  padding: 2em;
+}
+.featured-book .book-info .author,
+.featured-book .book-info .synopsis {
+  font-size: 15px;
 }
 .featured-book img {
   margin: 2em 1.4em 2em 0;
-  max-height: 400px;
+  max-height: 420px;
   float: left;
 }
 .featured-book .recommended {
@@ -27,7 +48,7 @@
   border-radius: 0 0 0 10px;
   color: #FFFFFF;
   display: inline-block;
-  font-size: 14px;
+  font-size: 13px;
   padding: 5px 10px;
   position: absolute;
   right: 0;
