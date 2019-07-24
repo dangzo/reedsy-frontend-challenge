@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 body {
   color: $text-color-primary;
@@ -13,16 +13,14 @@ body {
 }
 
 h1 {
-  font-size: 46px;
+  font-size: 36px;
   line-height: 2em;
-  font-family: 'Verdana', sans-serif;
 }
 
 h2 {
   font-size: 28px;
   line-height: 1.4em;
   font-weight: 600;
-  font-family: 'Verdana', sans-serif;
 }
 
 img {

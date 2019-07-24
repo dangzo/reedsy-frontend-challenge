@@ -1,7 +1,3 @@
-/*
-  All components and helpers get imported through the layout scss
- */
-
-@import './helpers/reset';
-
-@import './layout/common';
+@import "./reset";
+@import "./base-elements";
+@import "./variables"
