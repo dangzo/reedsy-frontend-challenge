@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
+    "q3": "./node_modules/.bin/sass q3/scss:q3/css",
+    "q3-watch": "./node_modules/.bin/sass --watch q3/scss:q3/css",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
@@ -31,6 +33,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
+    "sass": "^1.22.7",
     "sass-loader": "^7.1.0",
     "ts-jest": "^23.0.0",
     "typescript": "^3.4.3",
