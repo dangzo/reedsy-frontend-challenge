@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-// Containers
-import Home from "./containers/Home.vue";
+import Books from "./pages/Books.vue";
+import BookInfo from "./pages/BookInfo.vue";
 
 Vue.use(Router);
 
@@ -12,8 +12,17 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      name: "books",
+      component: Books
+    },
+    {
+      path: "/book/:bookId",
+      name: "book",
+      component: BookInfo
+    },
+    {
+      path: "*",
+      redirect: "/"
     }
   ]
 });

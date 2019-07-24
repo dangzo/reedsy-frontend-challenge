@@ -1,0 +1,36 @@
+@import './variables';
+
+body {
+  color: $text-color-primary;
+  background-color: $background-color-primary;
+  font-family: $font-family-main;
+  margin-bottom: 60px;
+  font-size: $font-size;
+
+  @media (max-width: 480px) {
+    margin-bottom: 0;
+  }
+}
+
+h1 {
+  font-size: 46px;
+  line-height: 2em;
+  font-family: 'Verdana', sans-serif;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.4em;
+  font-weight: 600;
+  font-family: 'Verdana', sans-serif;
+}
+
+img {
+  border-radius: 12px;
+  box-shadow: 0px 0px 8px #c4c3be;
+}
+
+p {
+  margin-bottom: 0.8em;
+  line-height: 1.4em;
+}
