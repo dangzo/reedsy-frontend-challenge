@@ -82,12 +82,22 @@ h2 {
     position: relative;
     top: -2px;
   }
+
+  @media (max-width: 550px) {
+    line-height: 1em;
+  }
 }
 
 img {
   float: right;
   margin-left: 25px;
   width: 150px;
+
+  @media (max-width: 550px) {
+    display: block;
+    float: none;
+    margin: auto auto 25px auto;
+  }
 }
 
 .author {
@@ -95,6 +105,10 @@ img {
   font-size: $text-font-size + 1;
   margin: 1em auto;
   font-style: italic;
+
+  @media (max-width: 550px) {
+    margin: 1em 0 0 0;
+  }
 }
 
 .book-list-item.odd {
@@ -140,6 +154,20 @@ img {
 
   span {
     margin-left: 20px;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+
+    a, span {
+      display: block;
+    }
+
+    span {
+      margin: 1em 0 0 0;
+    }
   }
 }
 </style>
