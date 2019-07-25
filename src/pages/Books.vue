@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BookList from "@/containers/BookList.vue";
+import BookList from "@/containers/BookList.container.vue";
 
 @Component({
   components: {

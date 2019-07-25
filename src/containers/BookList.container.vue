@@ -8,6 +8,7 @@
           :book="book"
           :index="index"
           :key="`book-item-${index}`"
+          @select="doSelectBook"
         />
       </div>
       <div v-else>No data found.</div>
@@ -35,12 +36,21 @@ export default class BookList extends Vue {
   @booksVuexModule.State
   books!: Book[];
 
+  // Vuex mutations
+  @booksVuexModule.Mutation
+  setSelectedBookByIndex!: (bookIndex: number) => void;
+
   // Vuex actions
   @booksVuexModule.Action
   retrieveBooks!: () => void;
 
   // Local state
   loadingData: boolean = false;
+
+  doSelectBook(bookIndex) {
+    this.setSelectedBookByIndex(bookIndex);
+    this.$router.push(`/books/${bookIndex}`);
+  }
 
   async doRetrieveBooks() {
     // Get data from server only once

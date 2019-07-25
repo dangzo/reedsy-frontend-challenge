@@ -1,17 +1,14 @@
 <template>
   <div class="row book-list-item" :class="{ odd: this.index % 2 === 0 }">
     <div class="container">
-      <router-link :to="`/book/${this.index}`">
-        <img
-          :src="book.cover"
-          :alt="`${book.title}, ${book.author}`"
-          :title="`${book.title}, ${book.author}`"
-        />
-      </router-link>
-      <h2>
-        <router-link :to="`/book/${this.index}`">
-          {{ index }}. {{ book.title }}
-        </router-link>
+      <img
+        :src="book.cover"
+        :alt="`${book.title}, ${book.author}`"
+        :title="`${book.title}, ${book.author}`"
+        @click="emitItemSelect"
+      />
+      <h2 @click.prevent="emitItemSelect">
+        <a href="#">{{ index }}. {{ book.title }}</a>
         <span>({{ book.rating }}/10)</span>
       </h2>
       <div class="author">{{ book.author }}</div>
@@ -54,6 +51,10 @@ export default class BookListItem extends Vue {
   get getUpvotedText() {
     return this.book.upvoted ? "Upvoted" : "Upvote";
   }
+
+  emitItemSelect() {
+    this.$emit("select", this.index);
+  }
 }
 </script>
 
@@ -89,6 +90,7 @@ h2 {
 }
 
 img {
+  cursor: pointer;
   float: right;
   margin-left: 25px;
   width: 150px;
