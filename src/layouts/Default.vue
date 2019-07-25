@@ -24,7 +24,9 @@ body {
   background-color: $background-color-secondary;
   box-shadow: 0px 0px 12px #c4c3be;
   font-family: Arial, sans-serif;
-  height: 100%;
+  min-height: 100%;
+  height: auto;
+  display: table;
   margin: auto;
   max-width: $main-container-width;
   -webkit-font-smoothing: antialiased;
@@ -32,7 +34,7 @@ body {
 
   .container {
     padding: 30px;
-    height: 100%;
+    height: auto;
   }
 
   .row {
