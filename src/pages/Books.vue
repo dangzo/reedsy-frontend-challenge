@@ -17,11 +17,19 @@ import BookList from "@/containers/BookList.vue";
 export default class Books extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import "@/styles/variables.scss";
+
 h1 {
-  color: $text-color-active;
+  color: $text-color-h1;
   text-align: center;
   font-weight: 900;
+  margin-bottom: 15px;
+
+  @media (max-width: 500px) {
+    line-height: 1em;
+    font-size: 30px;
+  }
 }
 .container {
   background-color: $background-color-primary;

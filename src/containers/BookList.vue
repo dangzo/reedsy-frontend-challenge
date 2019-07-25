@@ -2,7 +2,14 @@
   <div>
     <div v-if="loadingData">Loading data...</div>
     <div v-else>
-      <div v-if="books.length">Data loaded.</div>
+      <div v-if="books.length">
+        <BookListItem
+          v-for="(book, index) in books"
+          :book="book"
+          :index="index"
+          :key="`book-item-${index}`"
+        />
+      </div>
       <div v-else>No data found.</div>
     </div>
   </div>
@@ -11,12 +18,18 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { namespace } from "vuex-class";
+// Additional components
+import BookListItem from "@/components/BookListItem.vue";
 // Data model
 import { Book } from "@/models/Book";
 
 const booksVuexModule = namespace("books");
 
-@Component
+@Component({
+  components: {
+    BookListItem
+  }
+})
 export default class BookList extends Vue {
   // Vuex state
   @booksVuexModule.State
