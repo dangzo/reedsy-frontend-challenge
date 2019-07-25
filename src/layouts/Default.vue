@@ -14,7 +14,8 @@ export default class DefaultLayout extends Vue {}
 <style lang="scss">
 @import "@/styles/variables.scss";
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }

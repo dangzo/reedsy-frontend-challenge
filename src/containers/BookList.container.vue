@@ -47,7 +47,7 @@ export default class BookList extends Vue {
   // Local state
   loadingData: boolean = false;
 
-  doSelectBook(bookIndex) {
+  doSelectBook(bookIndex: number) {
     const selectedBook = this.books[bookIndex];
     this.setSelectedBookByIndex(bookIndex);
     this.$router.push(`/books/${selectedBook.slug}`);

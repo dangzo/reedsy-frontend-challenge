@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ book.title }}
+    <h1>{{ book.title }}</h1>
   </div>
 </template>
 
@@ -15,3 +15,15 @@ export default class BookDetails extends Vue {
   book!: Book;
 }
 </script>
+
+<style lang="scss" scoped>
+@import "@/styles/variables.scss";
+
+h1 {
+  color: darken($text-color-active, 20%);
+
+  @media (max-width: 550px) {
+    line-height: 1em;
+  }
+}
+</style>

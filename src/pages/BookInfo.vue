@@ -13,12 +13,11 @@ import BookDetails from "@/containers/BookDetails.container.vue";
     BookDetails
   }
 })
-
 export default class BookInfo extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-  .container {
-    padding-bottom: 0;
-  }
+.container {
+  padding-bottom: 0;
+}
 </style>

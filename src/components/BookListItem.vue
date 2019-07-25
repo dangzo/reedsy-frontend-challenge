@@ -58,7 +58,7 @@ export default class BookListItem extends Vue {
   }
 
   get getBookPrintableIndex() {
-    return parseInt(this.index, 10) + 1;
+    return this.index + 1;
   }
 
   emitItemSelect() {
@@ -172,7 +172,8 @@ img {
     text-align: center;
     margin: 0;
 
-    a, span {
+    a,
+    span {
       display: block;
     }
 
