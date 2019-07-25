@@ -1,20 +1,25 @@
 <template>
   <div class="row book-list-item" :class="{ odd: this.index % 2 === 0 }">
     <div class="container">
+      <!-- Cover image (float to right) -->
       <img
         :src="book.cover"
         :alt="`${book.title}, ${book.author}`"
         :title="`${book.title}, ${book.author}`"
         @click="emitItemSelect"
       />
+      <!-- Title and rating -->
       <h2 @click.prevent="emitItemSelect">
         <a href="#">{{ index }}. {{ book.title }}</a>
         <span>({{ book.rating }}/10)</span>
       </h2>
+      <!-- Author -->
       <div class="author">{{ book.author }}</div>
+      <!-- Synopsis -->
       <div class="synopsis">
         <p>{{ getTruncatedSynopsis }}</p>
       </div>
+      <!-- Upvote -->
       <div class="upvote">
         <a href="#" :class="{ upvoted: book.upvoted }">
           {{ getUpvotedText }}

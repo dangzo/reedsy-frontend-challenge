@@ -64,7 +64,7 @@ Then just open ```q3/q3.html```.
 
 ### General notes and naming convention
 
-- Using decorators from [vuex-class](https://github.com/ktsn/vuex-class) and [vue-property-decorators](https://github.com/kaorun343/vue-property-decorator) as this is just the way I used to code with Vue in the last year (so quicker to set up, more familiar, etc).
+- Using decorators from [vuex-class](https://github.com/ktsn/vuex-class), [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) and [vue-property-decorators](https://github.com/kaorun343/vue-property-decorator) as this is just the way I used to code with Vue in the last year (so quicker to set up, more familiar, etc).
 - Containers names are in the form of "Name.container.vue" (i.e. `BookList.container.vue`)
 - Local methods names are in the form of "doSomething" (i.e. `doRetrieveBookData()`)
 - Getters names always start with a `get` word (i.e. `getTruncatedSynopsis`)
