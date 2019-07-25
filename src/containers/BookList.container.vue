@@ -1,10 +1,14 @@
 <template>
   <div class="container">
+    <!-- search box -->
+    <SearchBox @input="doChangeSearchText" />
+    <!-- loader -->
     <div v-if="loadingData">Loading data...</div>
     <div v-else>
-      <div v-if="books.length">
+      <div v-if="getFilteredBooks.length">
+        <!-- book list -->
         <BookListItem
-          v-for="(book, index) in books"
+          v-for="(book, index) in getFilteredBooks"
           :book="book"
           :index="index"
           :key="`book-item-${index}`"
@@ -21,6 +25,7 @@ import { Component, Vue } from "vue-property-decorator";
 import { namespace } from "vuex-class";
 // Additional components
 import BookListItem from "@/components/BookListItem.vue";
+import SearchBox from "@/components/SearchBox.vue";
 // Data model
 import { Book } from "@/models/Book";
 
@@ -28,7 +33,8 @@ const booksVuexModule = namespace("books");
 
 @Component({
   components: {
-    BookListItem
+    BookListItem,
+    SearchBox
   }
 })
 export default class BookList extends Vue {
@@ -46,6 +52,23 @@ export default class BookList extends Vue {
 
   // Local state
   loadingData: boolean = false;
+
+  searchText: string = "";
+
+  get getFilteredBooks() {
+    return this.books.filter((book: Book) => {
+      const bookTitle = book.title || "";
+      const bookSynopsis = book.synopsis || "";
+      return (
+        bookTitle.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        bookSynopsis.toLowerCase().includes(this.searchText.toLowerCase())
+      );
+    });
+  }
+
+  doChangeSearchText(searchText: string) {
+    this.searchText = searchText;
+  }
 
   doSelectBook(bookIndex: number) {
     const selectedBook = this.books[bookIndex];
