@@ -11,18 +11,19 @@
 
       <!-- Title and rating -->
       <h2 @click.prevent="emitItemSelect">
+        <!-- prettier-ignore -->
         <a href="#" @click.prevent>{{ getBookPrintableIndex }}. {{ book.title }}</a>
         <span>({{ book.rating }}/10)</span>
       </h2>
 
       <!-- Author -->
       <div class="author">{{ book.author }}</div>
-      
+
       <!-- Synopsis -->
       <div class="synopsis">
         <p>{{ getTruncatedSynopsis }}</p>
       </div>
-      
+
       <!-- Upvote -->
       <div class="upvote">
         <a href="#" :class="{ upvoted: book.upvoted }">

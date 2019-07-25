@@ -62,4 +62,3 @@ export default class BookList extends Vue {
   min-height: 400px;
 }
 </style>
-

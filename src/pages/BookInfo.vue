@@ -15,4 +15,3 @@ import BookDetails from "@/containers/BookDetails.container.vue";
 })
 export default class BookInfo extends Vue {}
 </script>
-

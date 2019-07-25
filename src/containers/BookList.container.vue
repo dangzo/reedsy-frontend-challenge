@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1>Top books of all time</h1>
     <div v-if="loadingData">Loading data...</div>
     <div v-else>
       <div v-if="books.length">
@@ -72,21 +71,8 @@ export default class BookList extends Vue {
 <style lang="scss" scoped>
 @import "@/styles/variables.scss";
 
-h1 {
-  color: $text-color-h1;
-  text-align: center;
-  font-weight: 900;
-  margin-bottom: 15px;
-
-  @media (max-width: 500px) {
-    line-height: 1em;
-    font-size: 30px;
-  }
-}
-
 .container {
   background-color: $background-color-primary;
   height: 100%;
 }
 </style>
-
