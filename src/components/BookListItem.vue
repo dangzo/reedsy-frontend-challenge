@@ -12,8 +12,13 @@
       <!-- Title and rating -->
       <h2 @click.prevent="emitItemSelect">
         <!-- prettier-ignore -->
-        <a href="#" @click.prevent>{{ getBookPrintableIndex }}. {{ book.title }}</a>
-        <span>({{ book.rating }}/10)</span>
+        <a href="#" @click.prevent>
+          {{ getBookPrintableIndex }}.&nbsp;
+          <text-highlight :queries="searchText">
+            {{ book.title }}
+          </text-highlight>
+        </a>
+        <span class="rating">({{ book.rating }}/10)</span>
       </h2>
 
       <!-- Author -->
@@ -21,7 +26,11 @@
 
       <!-- Synopsis -->
       <div class="synopsis">
-        <p>{{ getTruncatedSynopsis }}</p>
+        <p>
+          <text-highlight :queries="searchText">
+            {{ getTruncatedSynopsis }}
+          </text-highlight>
+        </p>
       </div>
 
       <!-- Upvote -->
@@ -52,6 +61,9 @@ export default class BookListItem extends Vue {
 
   @Prop({ type: Number, required: true })
   index!: number;
+
+  @Prop({ type: String, required: false, default: "" })
+  searchText!: string;
 
   get getTruncatedSynopsis() {
     const synopsis = get(this.book, "synopsis", "");
@@ -93,7 +105,7 @@ h2 {
     }
   }
 
-  span {
+  .rating {
     color: $text-color-primary;
     font-weight: 300;
     font-size: 18px;

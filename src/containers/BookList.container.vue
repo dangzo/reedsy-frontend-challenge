@@ -11,6 +11,7 @@
           v-for="(book, index) in getFilteredBooks"
           :book="book"
           :index="index"
+          :search-text="searchText"
           :key="`book-item-${index}`"
           @select="doSelectBook"
         />

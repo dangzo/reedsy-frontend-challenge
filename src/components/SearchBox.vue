@@ -17,7 +17,7 @@ export default class SearchBox extends Vue {
   inputValue: string = "";
 
   doEmitInputChange() {
-    this.$emit("input", this.inputValue);
+    this.$emit("input", this.inputValue.trim());
   }
 }
 </script>
