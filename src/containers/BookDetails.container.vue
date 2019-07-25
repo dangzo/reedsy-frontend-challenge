@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <BookDetails v-if="!isBookEmpty()" :book="selectedBook" />
     <div v-else>Loading data...</div>
   </div>
@@ -53,3 +53,13 @@ export default class BookList extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "@/styles/variables.scss";
+
+.container {
+  background-color: $background-color-secondary;
+  min-height: 400px;
+}
+</style>
+

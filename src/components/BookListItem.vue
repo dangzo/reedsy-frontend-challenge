@@ -74,6 +74,10 @@ export default class BookListItem extends Vue {
 <style lang="scss" scoped>
 @import "@/styles/variables.scss";
 
+.container {
+  height: auto;
+}
+
 h2 {
   color: $text-color-h2;
 

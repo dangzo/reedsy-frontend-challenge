@@ -16,25 +16,22 @@ export default class DefaultLayout extends Vue {}
 
 html,
 body {
-  height: 100%;
+  height: auto;
   margin: 0;
 }
 
 #main {
-  background-color: $background-color-secondary;
   box-shadow: 0px 0px 12px #c4c3be;
   font-family: Arial, sans-serif;
-  min-height: 100%;
-  height: auto;
-  display: table;
-  margin: auto;
+  min-height: 400px;
+  margin: 25px auto;
   max-width: $main-container-width;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   .container {
     padding: 30px;
-    height: auto;
+    height: 100%;
   }
 
   .row {

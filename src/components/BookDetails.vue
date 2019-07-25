@@ -154,7 +154,7 @@ export default class BookDetails extends Vue {
 
   .rating {
     font-weight: 900;
-    margin-top: 2em;
+    margin: 2em auto;
   }
 }
 </style>

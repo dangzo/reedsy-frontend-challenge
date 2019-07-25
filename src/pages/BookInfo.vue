@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div style="height: 100%">
     <BookDetails />
   </div>
 </template>
@@ -16,8 +16,3 @@ import BookDetails from "@/containers/BookDetails.container.vue";
 export default class BookInfo extends Vue {}
 </script>
 
-<style lang="scss" scoped>
-.container {
-  padding-bottom: 0;
-}
-</style>
