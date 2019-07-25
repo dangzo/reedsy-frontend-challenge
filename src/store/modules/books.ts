@@ -15,6 +15,11 @@ export default class BooksModelStore extends VuexModule {
   }
 
   @Mutation
+  setSelectedBook(newBook: Book): void {
+    this.selectedBook = newBook;
+  }
+
+  @Mutation
   setSelectedBookByIndex(bookIndex: number): void {
     if (bookIndex < this.books.length) {
       this.selectedBook = this.books[bookIndex];
@@ -24,8 +29,26 @@ export default class BooksModelStore extends VuexModule {
   }
 
   @Action
+  async retrieveBookBySlug(bookSlug: string): Promise<void> {
+    try {
+      // See the effects of a slower connection
+      await new Promise(r => setTimeout(r, 1500));
+      const response = await axios({
+        method: "get",
+        url: `http://0.0.0.0:3000/books/${bookSlug}`
+      });
+
+      const book = get(response, "data", EmptyBook);
+      this.context.commit("setSelectedBook", book);
+    } catch (error) {
+      console.log("retrieveBookBySlug():", error);
+    }
+  }
+
+  @Action
   async retrieveBooks(): Promise<void> {
     try {
+      // See the effects of a slower connection
       await new Promise(r => setTimeout(r, 1500));
       const response = await axios({
         method: "get",

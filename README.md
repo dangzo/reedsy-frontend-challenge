@@ -69,6 +69,7 @@ Then just open ```q3/q3.html```.
 - Local methods names are in the form of "doSomething" (i.e. `doRetrieveBookData()`)
 - Getters names always start with a `get` word (i.e. `getTruncatedSynopsis`)
 - Using both prettier and eslint for code style and formatting
+- API calls are being slowed down by 1500ms to let appreciate loaders and simulate a real case client-to-server communication (not localhost-to-localhost I mean).
 - All pages optimised for mobile
 
 ### Project setup

@@ -1,5 +1,8 @@
 <template>
-  <BookDetails :book="selectedBook" />
+  <div>
+    <BookDetails v-if="!isBookEmpty()" :book="selectedBook" />
+    <div v-else>Loading data...</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -23,13 +26,29 @@ export default class BookList extends Vue {
   @booksVuexModule.State
   selectedBook!: Book;
 
+  // Vuex Actions
+  @booksVuexModule.Action
+  retrieveBookBySlug!: (bookSlug: string) => void;
+
+  // Local state
+  loadingData: boolean = false;
+
+  // Retrieve book from API if book is not set
+  // (this may happen on situations like page refresh)
+  async doRetrieveBook(slug: string) {
+    this.loadingData = true;
+    await this.retrieveBookBySlug(slug);
+    this.loadingData = false;
+  }
+
+  isBookEmpty() {
+    return this.selectedBook === EmptyBook;
+  }
+
   created() {
-    // Retrieve book from API if book is not set
-    // (this may happen on situations like page refresh)
     if (this.selectedBook === EmptyBook) {
       const slug = get(this.$router, "history.current.params.bookSlug", null);
-      console.log(this.$router, slug);
-      // this.retrieveBookBySlug(bookSlug);
+      this.doRetrieveBook(slug);
     }
   }
 }
