@@ -14,10 +14,16 @@ export default class DefaultLayout extends Vue {}
 <style lang="scss">
 @import "@/styles/variables.scss";
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 #main {
   background-color: $background-color-secondary;
   box-shadow: 0px 0px 12px #c4c3be;
   font-family: Arial, sans-serif;
+  height: 100%;
   margin: auto;
   max-width: $main-container-width;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +31,7 @@ export default class DefaultLayout extends Vue {}
 
   .container {
     padding: 30px;
+    height: 100%;
   }
 
   .row {
