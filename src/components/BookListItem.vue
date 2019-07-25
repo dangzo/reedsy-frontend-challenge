@@ -10,7 +10,7 @@
       />
       <!-- Title and rating -->
       <h2 @click.prevent="emitItemSelect">
-        <a href="#">{{ index }}. {{ book.title }}</a>
+        <a href="#">{{ getBookPrintableIndex }}. {{ book.title }}</a>
         <span>({{ book.rating }}/10)</span>
       </h2>
       <!-- Author -->
@@ -55,6 +55,10 @@ export default class BookListItem extends Vue {
 
   get getUpvotedText() {
     return this.book.upvoted ? "Upvoted" : "Upvote";
+  }
+
+  get getBookPrintableIndex() {
+    return parseInt(this.index, 10) + 1;
   }
 
   emitItemSelect() {
