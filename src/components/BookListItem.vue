@@ -10,9 +10,9 @@
       />
 
       <!-- Title and rating -->
-      <h2 @click.prevent="emitItemSelect">
+      <h2>
         <!-- prettier-ignore -->
-        <a href="#" @click.prevent>
+        <a href="#" @click.prevent @click.prevent="emitItemSelect">
           {{ getBookPrintableIndex }}.&nbsp;
           <text-highlight :queries="searchText">
             {{ book.title }}
