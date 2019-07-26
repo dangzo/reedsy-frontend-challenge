@@ -1,9 +1,9 @@
 <template>
   <div class="upvote">
-    <a href="#" :class="{ upvoted: bookUpvoted }">
+    <span>Upvoted {{ bookUpvotes }} times</span>
+    <a href="#" :class="{ upvoted: bookUpvoted }" @click.prevent>
       {{ getUpvotedText }}
     </a>
-    <span>Upvoted {{ bookUpvotes }} times</span>
   </div>
 </template>
 
@@ -11,12 +11,12 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
-export default class BookListItemUpvote extends Vue {
-  @Prop({ type: Boolean, required: true, default: false })
-  bookUpvoted!: boolean;
-
-  @Prop({ type: Number, required: true, default: 0 })
+export default class BookDetailsUpvote extends Vue {
+  @Prop({ type: Number, required: true, default: "" })
   bookUpvotes!: number;
+
+  @Prop({ type: Boolean, required: true, default: "" })
+  bookUpvoted!: boolean;
 
   get getUpvotedText() {
     return this.bookUpvoted ? "Upvoted" : "Upvote";
@@ -28,8 +28,10 @@ export default class BookListItemUpvote extends Vue {
 @import "@/styles/variables.scss";
 
 .upvote {
-  margin: 1em auto;
-  display: inline-block;
+  margin: 2em auto;
+  position: absolute;
+  top: 0;
+  right: 0;
 
   a {
     background-color: $background-color-upvote;
@@ -61,13 +63,14 @@ export default class BookListItemUpvote extends Vue {
   }
 
   span {
-    margin-left: 20px;
+    margin-right: 20px;
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 675px) {
     width: 100%;
     text-align: center;
-    margin: 0;
+    margin: 2em auto;
+    position: relative;
 
     a,
     span {
@@ -75,7 +78,7 @@ export default class BookListItemUpvote extends Vue {
     }
 
     span {
-      margin: 1em 0 0 0;
+      margin: 0 0 1em 0;
     }
   }
 }

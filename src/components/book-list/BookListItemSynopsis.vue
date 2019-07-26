@@ -13,7 +13,7 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 import { get } from "lodash";
 
 @Component
-export default class BookListItem extends Vue {
+export default class BookListItemSynopsis extends Vue {
   @Prop({ type: String, required: true, default: "" })
   bookSynopsis!: string;
 

@@ -15,7 +15,7 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
-export default class BookListItem extends Vue {
+export default class BookListItemTitle extends Vue {
   @Prop({ type: String, required: true, default: "" })
   bookTitle!: string;
 
