@@ -65,9 +65,10 @@ Then just open ```q3/q3.html```.
 ### General notes and naming convention
 
 - Using decorators from [vuex-class](https://github.com/ktsn/vuex-class), [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) and [vue-property-decorators](https://github.com/kaorun343/vue-property-decorator) as this is just the way I used to code with Vue in the last year (so quicker to set up, more familiar, etc).
-- Containers names are in the form of "Name.container.vue" (i.e. `BookList.container.vue`)
-- Local methods names are in the form of "doSomething" (i.e. `doRetrieveBookData()`)
-- Getters names always start with a `get` word (i.e. `getTruncatedSynopsis`)
+- Containers names are in the form of "Name.container.vue" (e.g. `BookList.container.vue`)
+- Local methods names are in the form of "doSomething" (e.g. `doRetrieveBookData()`)
+- Components file names are capitalised (e.g. `BookDetails.vue`) while all other file names are lowercase using snake-case.
+- Getters names always start with a `get` word (e.g. `getTruncatedSynopsis`)
 - Using both prettier and eslint for code style and formatting
 - API calls are being slowed down by 1500ms to let appreciate loaders and simulate a real case client-to-server communication (not localhost-to-localhost I mean).
 - All pages optimised for mobile
