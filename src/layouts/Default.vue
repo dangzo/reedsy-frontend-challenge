@@ -32,6 +32,10 @@ body {
   .container {
     padding: 30px;
     height: 100%;
+
+    @media (max-width: 550px) {
+      padding: 30px 15px;
+    }
   }
 
   .row {
@@ -39,6 +43,11 @@ body {
     margin-right: -30px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  @media (max-width: 550px) {
+    box-shadow: none;
+    margin: 0;
   }
 }
 </style>

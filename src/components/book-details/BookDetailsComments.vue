@@ -139,6 +139,10 @@ export default class BookDetailsComments extends Vue {
 
       .author .date {
         color: #994;
+
+        @media (max-width: 550px) {
+          line-height: 20px;
+        }
       }
 
       .text {

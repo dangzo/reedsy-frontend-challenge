@@ -27,10 +27,16 @@ input {
   width: 300px;
   padding: 0.5em 1em;
   font-size: 15px;
+
+  @media (max-width: 550px) {
+    display: block;
+    width: 100%;
+  }
 }
 .search-box-container {
   width: 100%;
-  text-align: right;
   margin-bottom: 25px;
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
