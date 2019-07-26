@@ -6,40 +6,32 @@
         :src="book.cover"
         :alt="`${book.title}, ${book.author}`"
         :title="`${book.title}, ${book.author}`"
-        @click="emitItemSelect"
+        @click="doEmitItemSelect"
       />
 
       <!-- Title and rating -->
-      <h2>
-        <!-- prettier-ignore -->
-        <a href="#" @click.prevent @click.prevent="emitItemSelect">
-          {{ getBookPrintableIndex }}.&nbsp;
-          <text-highlight :queries="searchText">
-            {{ book.title }}
-          </text-highlight>
-        </a>
-        <span class="rating">({{ book.rating }}/10)</span>
-      </h2>
+      <BookListItemTitle
+        :book-title="book.title"
+        :book-rating="book.rating"
+        :book-index="book.index"
+        :search-text="searchText"
+        @select="doEmitItemSelect"
+      />
 
       <!-- Author -->
       <div class="author">{{ book.author }}</div>
 
       <!-- Synopsis -->
-      <div class="synopsis">
-        <p>
-          <text-highlight :queries="searchText">
-            {{ getTruncatedSynopsis }}
-          </text-highlight>
-        </p>
-      </div>
+      <BookListItemSynopsis
+        :book-synopsis="book.synopsis"
+        :search-text="searchText"
+      />
 
       <!-- Upvote -->
-      <div class="upvote">
-        <a href="#" :class="{ upvoted: book.upvoted }">
-          {{ getUpvotedText }}
-        </a>
-        <span>Upvoted {{ book.upvotes }} times</span>
-      </div>
+      <BookListItemUpvote
+        :book-upvoted="book.upvoted"
+        :book-upvotes="book.upvotes"
+      />
     </div>
   </div>
 </template>
@@ -47,12 +39,18 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { get } from "lodash";
+// Other components
+import BookListItemTitle from "./book-list/BookListItemTitle.vue";
+import BookListItemSynopsis from "./book-list/BookListItemSynopsis.vue";
+import BookListItemUpvote from "./book-list/BookListItemUpvote.vue";
 // Data model
 import { Book, EmptyBook } from "@/models/Book";
 
 @Component({
   components: {
-    BookListItem
+    BookListItemTitle,
+    BookListItemSynopsis,
+    BookListItemUpvote
   }
 })
 export default class BookListItem extends Vue {
@@ -65,20 +63,11 @@ export default class BookListItem extends Vue {
   @Prop({ type: String, required: false, default: "" })
   searchText!: string;
 
-  get getTruncatedSynopsis() {
-    const synopsis = get(this.book, "synopsis", "");
-    return synopsis.substring(0, 200) + "...";
-  }
-
   get getUpvotedText() {
     return this.book.upvoted ? "Upvoted" : "Upvote";
   }
 
-  get getBookPrintableIndex() {
-    return this.index + 1;
-  }
-
-  emitItemSelect() {
+  doEmitItemSelect() {
     this.$emit("select", this.index);
   }
 }
@@ -89,34 +78,6 @@ export default class BookListItem extends Vue {
 
 .container {
   height: auto;
-}
-
-h2 {
-  color: $text-color-h2;
-
-  a {
-    color: $text-color-h2;
-    text-decoration: none;
-    -webkit-transition: color linear 0.1s;
-    transition: color linear 0.1s;
-
-    &:hover {
-      color: adjust-color($background-color-upvote, $red: 15, $green: 15);
-    }
-  }
-
-  .rating {
-    color: $text-color-primary;
-    font-weight: 300;
-    font-size: 18px;
-    margin-left: 10px;
-    position: relative;
-    top: -2px;
-  }
-
-  @media (max-width: 550px) {
-    line-height: 1em;
-  }
 }
 
 img {
@@ -135,7 +96,7 @@ img {
 .author {
   color: lighten($text-color-primary, 20%);
   font-size: $text-font-size + 1;
-  margin: 1em auto;
+  margin: 0.5em auto;
   font-style: italic;
 
   @media (max-width: 550px) {
@@ -145,62 +106,5 @@ img {
 
 .book-list-item.odd {
   background-color: $background-color-secondary;
-}
-
-.synopsis {
-  margin: 2em auto;
-}
-
-.upvote {
-  margin: 1em auto;
-  display: inline-block;
-
-  a {
-    background-color: $background-color-upvote;
-    border-radius: 8px;
-    padding: 8px 12px;
-    color: #ffffff;
-    text-decoration: none;
-    -webkit-transition: background-color linear 0.1s;
-    transition: background-color linear 0.1s;
-
-    &.upvoted {
-      background-color: transparent;
-      border: 2px solid $background-color-upvote;
-      color: $text-color-upvote;
-      font-weight: 900;
-    }
-
-    &.upvoted:hover {
-      cursor: default;
-    }
-
-    &:not(.upvoted):hover {
-      background-color: adjust-color(
-        $background-color-upvote,
-        $red: 25,
-        $green: 25
-      );
-    }
-  }
-
-  span {
-    margin-left: 20px;
-  }
-
-  @media (max-width: 550px) {
-    width: 100%;
-    text-align: center;
-    margin: 0;
-
-    a,
-    span {
-      display: block;
-    }
-
-    span {
-      margin: 1em 0 0 0;
-    }
-  }
 }
 </style>
