@@ -24,12 +24,16 @@
 
     <!-- Rating -->
     <div class="rating">Rating {{ book.rating }}/10</div>
+
+    <!-- Comments -->
+    <BookDetailsComments />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 // Other components
+import BookDetailsComments from "./book-details/BookDetailsComments.vue";
 import BookDetailsSynopsis from "./book-details/BookDetailsSynopsis.vue";
 import BookDetailsUpvote from "./book-details/BookDetailsUpvote.vue";
 // Data model
@@ -37,6 +41,7 @@ import { Book, EmptyBook } from "@/models/Book";
 
 @Component({
   components: {
+    BookDetailsComments,
     BookDetailsUpvote,
     BookDetailsSynopsis
   }
