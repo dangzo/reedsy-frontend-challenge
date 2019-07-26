@@ -14,6 +14,7 @@ yarn install
 |- q3/
 |   |- css/                 # Generated CSS
 |   |- images/
+|   |- images/avatars/      # Avatar for comments section
 |   |- scss/                # SCSS
 |   \- q3.html              # Q3 entry file
 |- src/
@@ -72,6 +73,7 @@ Then just open ```q3/q3.html```.
 - Using both prettier and eslint for code style and formatting
 - API calls are being slowed down by 1500ms to let appreciate loaders and simulate a real case client-to-server communication (not localhost-to-localhost I mean).
 - All pages optimised for mobile
+- I added a comments section to the book page: comments are hard-coded into the `BookDetailsComments.vue` component, not nested, and the reply button does actually nothing. Avatar pictures are retrieved from `/public/images/avatars/` (relative to project root).
 
 ### Project setup
 ```
