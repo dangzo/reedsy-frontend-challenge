@@ -1,5 +1,19 @@
 <template>
   <div class="pagination">
+    <span class="prev">
+      <!--
+        Remember pagination.activePageIndex is an index,
+        while doSetPagination() expects page number
+      -->
+      <!-- prettier-ignore -->
+      <a
+        href="#"
+        :class="{ disabled: isPrevLinkDisabled() }"
+        @click.prevent="!isPrevLinkDisabled() && doSetPagination(pagination.activePageIndex)"
+      >
+        &larr; prev
+      </a>
+    </span>
     <span
       v-for="(page, index) in getTotalPages"
       :class="{ active: pagination.activePageIndex === index }"
@@ -7,6 +21,16 @@
     >
       <a href="#" @click.prevent="doSetPagination(index + 1)">
         {{ index + 1 }}
+      </a>
+    </span>
+    <span class="next">
+      <!-- prettier-ignore -->
+      <a
+        href="#"
+        :class="{ disabled: isNextLinkDisabled() }"
+        @click.prevent="!isNextLinkDisabled() && doSetPagination(pagination.activePageIndex + 2)"
+      >
+        next &rarr;
       </a>
     </span>
   </div>
@@ -47,6 +71,22 @@ export default class BookListPagination extends Vue {
     return 0;
   }
 
+  // Returns true when current page index is 0
+  isPrevLinkDisabled() {
+    if (this.pagination) {
+      return this.pagination.activePageIndex === 0;
+    }
+    return false;
+  }
+
+  // Returns true when current page index is total pages - 1
+  isNextLinkDisabled() {
+    if (this.pagination) {
+      return this.pagination.activePageIndex === this.getTotalPages - 1;
+    }
+    return false;
+  }
+
   doSetPagination(pageNumber: number) {
     const minIndex = this.itemsPerPage * (pageNumber - 1);
     const maxIndex = minIndex + this.itemsPerPage;
@@ -82,6 +122,20 @@ export default class BookListPagination extends Vue {
     width: 20px;
     height: 20px;
     padding: 10px;
+
+    &.next,
+    &.prev {
+      width: auto;
+
+      a {
+        text-decoration: none;
+
+        &.disabled {
+          cursor: default;
+          color: #cc9;
+        }
+      }
+    }
 
     a {
       color: $text-color-h2;
