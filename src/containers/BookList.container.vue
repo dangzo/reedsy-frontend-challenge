@@ -18,15 +18,20 @@
       </div>
       <div v-else>No data found.</div>
     </div>
+    <!-- pagination -->
+    <BookListPagination :items-length="books.length" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { namespace } from "vuex-class";
+
 // Additional components
 import BookListItem from "@/components/BookListItem.vue";
+import BookListPagination from "@/components/BookListPagination.vue";
 import SearchBox from "@/components/SearchBox.vue";
+
 // Data model
 import { Book } from "@/models/Book";
 
@@ -35,6 +40,7 @@ const booksVuexModule = namespace("books");
 @Component({
   components: {
     BookListItem,
+    BookListPagination,
     SearchBox
   }
 })

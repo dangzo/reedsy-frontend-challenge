@@ -44,7 +44,7 @@ import BookListItemTitle from "./book-list/BookListItemTitle.vue";
 import BookListItemSynopsis from "./book-list/BookListItemSynopsis.vue";
 import BookListItemUpvote from "./book-list/BookListItemUpvote.vue";
 // Data model
-import { Book, EmptyBook } from "@/models/Book";
+import { Book } from "@/models/Book";
 
 @Component({
   components: {
@@ -54,7 +54,7 @@ import { Book, EmptyBook } from "@/models/Book";
   }
 })
 export default class BookListItem extends Vue {
-  @Prop({ type: Object, required: true, default: EmptyBook })
+  @Prop({ type: Object, required: true })
   book!: Book;
 
   @Prop({ type: Number, required: true })

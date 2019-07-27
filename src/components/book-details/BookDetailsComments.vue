@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import moment from "moment";
 
 interface comment {
@@ -65,27 +65,27 @@ export default class BookDetailsComments extends Vue {
       avatar: "/images/avatars/2.png",
       author: "Stan",
       email: "stan@standup.me",
-      date: new Date().toString(),
+      date: new Date("July 27, 2019 11:13:00").toString(),
       text: "That's the second static comment"
     },
     {
       avatar: "/images/avatars/3.jpg",
       author: "Stan Two",
       email: "stan-two@standup.me",
-      date: new Date().toString(),
+      date: new Date("July 25, 2019 10:23:00").toString(),
       text: "That's the third"
     },
     {
       author: "Stan By Me",
       email: "stan-by-me@standup.me",
-      date: new Date().toString(),
+      date: new Date("July 1, 2019 21:05:00").toString(),
       // prettier-ignore
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
   ];
 
   formatCommentDate(date: string) {
-    return moment(date).format("LLLL");
+    return moment(new Date(date)).format("llll");
   }
 }
 </script>
@@ -139,6 +139,7 @@ export default class BookDetailsComments extends Vue {
 
       .author .date {
         color: #994;
+        font-size: 15px;
 
         @media (max-width: 550px) {
           line-height: 20px;

@@ -16,16 +16,16 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class BookListItemTitle extends Vue {
-  @Prop({ type: String, required: true, default: "" })
+  @Prop({ type: String, required: true })
   bookTitle!: string;
 
-  @Prop({ type: String, required: true, default: "" })
+  @Prop({ type: String, required: true })
   bookRating!: string;
 
-  @Prop({ type: Number, required: true, default: "" })
+  @Prop({ type: Number, required: true })
   bookIndex!: number;
 
-  @Prop({ type: String, required: true, default: "" })
+  @Prop({ type: String, required: true })
   searchText!: string;
 
   get getBookPrintableIndex() {

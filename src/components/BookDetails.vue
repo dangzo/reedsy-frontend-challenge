@@ -37,7 +37,7 @@ import BookDetailsComments from "./book-details/BookDetailsComments.vue";
 import BookDetailsSynopsis from "./book-details/BookDetailsSynopsis.vue";
 import BookDetailsUpvote from "./book-details/BookDetailsUpvote.vue";
 // Data model
-import { Book, EmptyBook } from "@/models/Book";
+import { Book } from "@/models/Book";
 
 @Component({
   components: {
@@ -47,7 +47,7 @@ import { Book, EmptyBook } from "@/models/Book";
   }
 })
 export default class BookDetails extends Vue {
-  @Prop({ type: Object, required: true, default: EmptyBook })
+  @Prop({ type: Object, required: true })
   book!: Book;
 }
 </script>

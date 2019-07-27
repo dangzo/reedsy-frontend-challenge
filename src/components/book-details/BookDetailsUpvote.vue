@@ -12,10 +12,10 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class BookDetailsUpvote extends Vue {
-  @Prop({ type: Number, required: true, default: "" })
+  @Prop({ type: Number, required: true })
   bookUpvotes!: number;
 
-  @Prop({ type: Boolean, required: true, default: "" })
+  @Prop({ type: Boolean, required: true })
   bookUpvoted!: boolean;
 
   get getUpvotedText() {

@@ -14,10 +14,10 @@ import { get } from "lodash";
 
 @Component
 export default class BookListItemSynopsis extends Vue {
-  @Prop({ type: String, required: true, default: "" })
+  @Prop({ type: String, required: true })
   bookSynopsis!: string;
 
-  @Prop({ type: String, required: false, default: "" })
+  @Prop({ type: String, required: false })
   searchText!: string;
 
   get getTruncatedSynopsis() {

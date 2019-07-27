@@ -10,7 +10,7 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class BookDetailsSynopsis extends Vue {
-  @Prop({ type: String, required: true, default: "" })
+  @Prop({ type: String, required: true })
   bookSynopsis!: string;
 }
 </script>
