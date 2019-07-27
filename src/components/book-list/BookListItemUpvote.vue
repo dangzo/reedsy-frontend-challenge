@@ -45,10 +45,10 @@ export default class BookListItemUpvote extends Vue {
       border: 2px solid $background-color-upvote;
       color: $text-color-upvote;
       font-weight: 900;
-    }
 
-    &.upvoted:hover {
-      cursor: default;
+      &:hover {
+        cursor: default;
+      }
     }
 
     &:not(.upvoted):hover {

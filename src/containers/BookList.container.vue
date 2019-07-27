@@ -5,21 +5,26 @@
     <!-- loader -->
     <div v-if="loadingData">Loading data...</div>
     <div v-else>
-      <div v-if="getFilteredBooks.length">
+      <div v-if="getBooks.length">
         <!-- book list -->
         <BookListItem
-          v-for="(book, index) in getFilteredBooks"
+          v-for="(book, index) in getBooks"
           :book="book"
-          :index="index"
+          :index="pagination.minIndex + index"
           :search-text="searchText"
-          :key="`book-item-${index}`"
+          :key="`book-item-${pagination.minIndex + index}`"
           @select="doSelectBook"
         />
       </div>
       <div v-else>No data found.</div>
     </div>
     <!-- pagination -->
-    <BookListPagination :items-length="books.length" />
+    <BookListPagination
+      :items-length="books ? books.length : 0"
+      :items-per-page="3"
+      :active-page-index="pagination.activePageIndex"
+      @set-pagination="doSetPagination"
+    />
   </div>
 </template>
 
@@ -62,6 +67,13 @@ export default class BookList extends Vue {
 
   searchText: string = "";
 
+  pagination: {
+    minIndex: number;
+    maxIndex: number;
+    activePageIndex: number;
+  } = { minIndex: 0, maxIndex: 3, activePageIndex: 0 };
+
+  // Filtered: meaning for search
   get getFilteredBooks() {
     return this.books.filter((book: Book) => {
       const bookTitle = book.title || "";
@@ -71,6 +83,14 @@ export default class BookList extends Vue {
         bookSynopsis.toLowerCase().includes(this.searchText.toLowerCase())
       );
     });
+  }
+
+  get getBooks() {
+    return this.doApplyPagination(this.getFilteredBooks);
+  }
+
+  doApplyPagination(books: Book[]) {
+    return books.slice(this.pagination.minIndex, this.pagination.maxIndex);
   }
 
   doChangeSearchText(searchText: string) {
@@ -84,12 +104,20 @@ export default class BookList extends Vue {
   }
 
   async doRetrieveBooks() {
-    // Get data from server only once
+    // Get data from server only once, when books is not set
     if (this.books.length < 1) {
       this.loadingData = true;
       await this.retrieveBooks();
       this.loadingData = false;
     }
+  }
+
+  doSetPagination(payload: {
+    minIndex: number;
+    maxIndex: number;
+    activePageIndex: number;
+  }) {
+    this.pagination = payload;
   }
 
   created() {
