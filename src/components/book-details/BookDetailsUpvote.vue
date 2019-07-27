@@ -1,7 +1,7 @@
 <template>
   <div class="upvote">
     <span>Upvoted {{ bookUpvotes }} times</span>
-    <a href="#" :class="{ upvoted: bookUpvoted }" @click.prevent>
+    <a href="#" :class="{ upvoted: bookUpvoted }" @click.prevent="doUpvote">
       {{ getUpvotedText }}
     </a>
   </div>
@@ -20,6 +20,10 @@ export default class BookDetailsUpvote extends Vue {
 
   get getUpvotedText() {
     return this.bookUpvoted ? "Upvoted" : "Upvote";
+  }
+
+  doUpvote() {
+    // do nothing
   }
 }
 </script>

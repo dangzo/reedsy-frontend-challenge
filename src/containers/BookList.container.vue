@@ -22,8 +22,6 @@
     <BookListPagination
       :items-length="books ? books.length : 0"
       :items-per-page="3"
-      :active-page-index="pagination.activePageIndex"
-      @set-pagination="doSetPagination"
     />
   </div>
 </template>
@@ -34,13 +32,15 @@ import { namespace } from "vuex-class";
 
 // Additional components
 import BookListItem from "@/components/BookListItem.vue";
-import BookListPagination from "@/components/BookListPagination.vue";
+import BookListPagination from "@/containers/BookListPagination.vue";
 import SearchBox from "@/components/SearchBox.vue";
 
-// Data model
+// Data models
 import { Book } from "@/models/Book";
+import { Pagination } from "@/models/Pagination";
 
 const booksVuexModule = namespace("books");
+const paginationVuexModule = namespace("pagination");
 
 @Component({
   components: {
@@ -54,6 +54,9 @@ export default class BookList extends Vue {
   @booksVuexModule.State
   books!: Book[];
 
+  @paginationVuexModule.State
+  pagination!: Pagination;
+
   // Vuex mutations
   @booksVuexModule.Mutation
   setSelectedBookByIndex!: (bookIndex: number) => void;
@@ -66,12 +69,6 @@ export default class BookList extends Vue {
   loadingData: boolean = false;
 
   searchText: string = "";
-
-  pagination: {
-    minIndex: number;
-    maxIndex: number;
-    activePageIndex: number;
-  } = { minIndex: 0, maxIndex: 3, activePageIndex: 0 };
 
   // Filtered: meaning for search
   get getFilteredBooks() {
@@ -110,14 +107,6 @@ export default class BookList extends Vue {
       await this.retrieveBooks();
       this.loadingData = false;
     }
-  }
-
-  doSetPagination(payload: {
-    minIndex: number;
-    maxIndex: number;
-    activePageIndex: number;
-  }) {
-    this.pagination = payload;
   }
 
   created() {

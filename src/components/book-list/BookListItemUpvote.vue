@@ -1,6 +1,6 @@
 <template>
   <div class="upvote">
-    <a href="#" :class="{ upvoted: bookUpvoted }">
+    <a href="#" :class="{ upvoted: bookUpvoted }" @click.prevent>
       {{ getUpvotedText }}
     </a>
     <span>Upvoted {{ bookUpvotes }} times</span>

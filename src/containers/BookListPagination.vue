@@ -2,10 +2,10 @@
   <div class="pagination">
     <span
       v-for="(page, index) in getTotalPages"
-      :class="{ active: activePageIndex === index }"
+      :class="{ active: pagination.activePageIndex === index }"
       :key="`page-link-${index}`"
     >
-      <a href="#" @click.prevent="doEmitSetPagination(index + 1)">
+      <a href="#" @click.prevent="doSetPagination(index + 1)">
         {{ index + 1 }}
       </a>
     </span>
@@ -14,17 +14,28 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
+import { namespace } from "vuex-class";
+
+// Data models
+import { Pagination, EmptyPagination } from "@/models/Pagination";
+
+const paginationVuexModule = namespace("pagination");
 
 @Component
 export default class BookListPagination extends Vue {
   @Prop({ type: Number, required: true })
   itemsLength!: number;
 
-  @Prop({ type: Number, required: true })
+  @Prop({ type: Number, required: false, default: 4 })
   itemsPerPage!: number;
 
-  @Prop({ type: Number, required: true })
-  activePageIndex!: number;
+  // Vuex state
+  @paginationVuexModule.State
+  pagination!: Pagination;
+
+  // Vuex mutations
+  @paginationVuexModule.Mutation
+  setPagination!: (newPagination: Pagination) => void;
 
   get getTotalPages() {
     if (this.itemsLength) {
@@ -36,15 +47,26 @@ export default class BookListPagination extends Vue {
     return 0;
   }
 
-  doEmitSetPagination(pageNumber: number) {
+  doSetPagination(pageNumber: number) {
     const minIndex = this.itemsPerPage * (pageNumber - 1);
     const maxIndex = minIndex + this.itemsPerPage;
 
-    this.$emit("set-pagination", {
+    this.setPagination({
       minIndex,
       maxIndex,
       activePageIndex: pageNumber - 1
     });
+  }
+
+  created() {
+    // Set it to default values only the first time
+    if (this.pagination === EmptyPagination) {
+      this.setPagination({
+        minIndex: 0,
+        maxIndex: this.itemsPerPage,
+        activePageIndex: 0
+      });
+    }
   }
 }
 </script>
