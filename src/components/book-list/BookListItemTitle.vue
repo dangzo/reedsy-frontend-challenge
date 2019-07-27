@@ -22,8 +22,8 @@ export default class BookListItemTitle extends Vue {
   @Prop({ type: String, required: true, default: "" })
   bookRating!: string;
 
-  @Prop({ type: String, required: true, default: "" })
-  bookIndex!: string;
+  @Prop({ type: Number, required: true, default: "" })
+  bookIndex!: number;
 
   @Prop({ type: String, required: true, default: "" })
   searchText!: string;

@@ -13,7 +13,7 @@
       <BookListItemTitle
         :book-title="book.title"
         :book-rating="book.rating"
-        :book-index="book.index"
+        :book-index="index"
         :search-text="searchText"
         @select="doEmitItemSelect"
       />
