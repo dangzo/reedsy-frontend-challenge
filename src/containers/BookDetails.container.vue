@@ -65,7 +65,7 @@ export default class BookList extends Vue {
 
 .container {
   background-color: $background-color-secondary;
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .spinner {
@@ -75,6 +75,10 @@ export default class BookList extends Vue {
     display: block;
     margin: auto;
     margin-top: 20%;
+
+    @media (max-width: 550px) {
+
+    }
   }
 }
 </style>
