@@ -3,7 +3,7 @@
     <!-- prettier-ignore -->
     <a
       href="#"
-      :class="{ disabled: disabled || isNextLinkDisabled() }"
+      :class="{ disabled: disabled || isNextLinkDisabled() }"
       @click.prevent="doEmitClick"
     >
       next &rarr;

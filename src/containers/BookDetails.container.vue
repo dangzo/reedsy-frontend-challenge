@@ -78,10 +78,6 @@ export default class BookDetailsContainer extends Vue {
     display: block;
     margin: auto;
     margin-top: 20%;
-
-    @media (max-width: 550px) {
-
-    }
   }
 }
 

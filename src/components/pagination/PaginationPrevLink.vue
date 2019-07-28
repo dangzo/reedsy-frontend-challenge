@@ -3,7 +3,7 @@
     <!-- prettier-ignore -->
     <a
       href="#"
-      :class="{ disabled: disabled || isPrevLinkDisabled() }"
+      :class="{ disabled: disabled || isPrevLinkDisabled() }"
       @click.prevent="doEmitClick"
     >
       &larr; prev
