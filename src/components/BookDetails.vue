@@ -14,7 +14,7 @@
 
     <!-- Cover image (float to title's right) -->
     <img
-       data-cy="book-cover"
+      data-cy="book-cover"
       :src="book.cover"
       :alt="`${book.title}, ${book.author}`"
       :title="`${book.title}, ${book.author}`"

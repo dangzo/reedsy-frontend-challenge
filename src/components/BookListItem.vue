@@ -2,7 +2,8 @@
   <div
     class="row book-list-item"
     data-cy="book-list-item"
-    :class="{ odd: this.index % 2 === 0 }">
+    :class="{ odd: this.index % 2 === 0 }"
+  >
     <div class="container">
       <!-- Cover image (float to right) -->
       <img

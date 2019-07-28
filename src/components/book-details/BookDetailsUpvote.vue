@@ -5,7 +5,8 @@
       href="#"
       data-cy="book-upvoted-button"
       :class="{ upvoted: bookUpvoted }"
-      @click.prevent="doUpvote">
+      @click.prevent="doUpvote"
+    >
       {{ getUpvotedText }}
     </a>
   </div>
