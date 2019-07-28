@@ -3,7 +3,9 @@
     <!-- search box -->
     <SearchBox @input="doChangeSearchText" />
     <!-- loader -->
-    <div v-if="loadingData">Loading data...</div>
+    <div v-if="loadingData" class="spinner">
+      <PulseLoader color="#a27934" size="18px" />
+    </div>
     <div v-else>
       <div v-if="getBooks.length">
         <!-- book list -->
@@ -16,7 +18,7 @@
           @select="doSelectBook"
         />
       </div>
-      <div v-else>No data found.</div>
+      <div v-else class="no-found-text">No data found.</div>
     </div>
     <!-- pagination -->
     <BookListPagination
@@ -35,6 +37,7 @@ import { namespace } from "vuex-class";
 import BookListItem from "@/components/BookListItem.vue";
 import BookListPagination from "@/containers/BookListPagination.vue";
 import SearchBox from "@/components/SearchBox.vue";
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 
 // Data models
 import { Book } from "@/models/Book";
@@ -47,7 +50,8 @@ const paginationVuexModule = namespace("pagination");
   components: {
     BookListItem,
     BookListPagination,
-    SearchBox
+    SearchBox,
+    PulseLoader
   }
 })
 export default class BookList extends Vue {
@@ -122,5 +126,19 @@ export default class BookList extends Vue {
 .container {
   background-color: $background-color-primary;
   height: 100%;
+
+  .spinner {
+    display: flex;
+
+    .v-spinner {
+      display: block;
+      margin: 50px auto;
+    }
+  }
+
+  .no-found-text {
+    text-align: center;
+    margin: 80px auto;
+  }
 }
 </style>

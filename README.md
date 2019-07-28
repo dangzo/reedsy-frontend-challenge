@@ -19,7 +19,7 @@ yarn install
 |   \- q3.html              # Q3 entry file
 |- src/
 |   |- assets/              # Generic assets (actually empty)
-|   |- components/          # Dump components
+|   |- components/          # Dump components, organised by context
 |   |- containers/          # Containers
 |   |- layouts/             # Layout components
 |   |- models/              # Data models
