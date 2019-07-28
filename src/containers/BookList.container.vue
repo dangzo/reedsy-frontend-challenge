@@ -20,8 +20,9 @@
     </div>
     <!-- pagination -->
     <BookListPagination
-      :items-length="books ? books.length : 0"
+      :items-length="getFilteredBooks.length"
       :items-per-page="3"
+      :search-text="searchText"
     />
   </div>
 </template>

@@ -25,8 +25,9 @@ export default class PaginationPrevLink extends Vue {
   }
 
   doEmitClick() {
-    if (!this.isPrevLinkDisabled()) 
+    if (!this.isPrevLinkDisabled()) {
       this.$emit("click", this.activePageIndex);
+    }
   }
 }
 </script>

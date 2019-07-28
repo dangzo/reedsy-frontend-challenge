@@ -28,8 +28,9 @@ export default class PaginationNextLink extends Vue {
   }
 
   doEmitClick() {
-    if (!this.isNextLinkDisabled()) 
+    if (!this.isNextLinkDisabled()) {
       this.$emit("click", this.activePageIndex + 2);
+    }
   }
 }
 </script>

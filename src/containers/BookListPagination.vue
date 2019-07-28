@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop, Watch } from "vue-property-decorator";
 import { namespace } from "vuex-class";
 
 // Components
@@ -50,6 +50,9 @@ export default class BookListPagination extends Vue {
   @Prop({ type: Number, required: false, default: 4 })
   itemsPerPage!: number;
 
+  @Prop({ type: String, required: false, default: "" })
+  searchText!: string;
+
   // Vuex state
   @paginationVuexModule.State
   pagination!: Pagination;
@@ -57,6 +60,13 @@ export default class BookListPagination extends Vue {
   // Vuex mutations
   @paginationVuexModule.Mutation
   setPagination!: (newPagination: Pagination) => void;
+
+  // Vuex actions
+  @paginationVuexModule.Action
+  doUpdatePagination!: (payload: {
+    currentTotalItems: number;
+    itemsPerPage: number;
+  }) => Promise<void>;
 
   get getTotalPages() {
     if (this.itemsLength) {
@@ -86,6 +96,22 @@ export default class BookListPagination extends Vue {
         minIndex: 0,
         maxIndex: this.itemsPerPage,
         activePageIndex: 0
+      });
+    }
+  }
+
+  @Watch("searchText")
+  updatePaginationWhenTextChanges() {
+    // Reset pagination to index 0 if we are applying a search filter
+    // and current filtered elements length is < total elements that
+    // should be displaying in current active page
+    // (hope this makes sense).
+    // In short, this allows us to avoid having a "No elements found"
+    // when the search filter still returns some elements.
+    if (this.searchText.length) {
+      this.doUpdatePagination({
+        currentTotalItems: this.itemsLength,
+        itemsPerPage: this.itemsPerPage
       });
     }
   }
