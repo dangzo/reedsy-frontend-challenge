@@ -38,7 +38,7 @@ yarn install
 
 ## About you and General questions
 
-I've put the answers to your personal an generic questions in [ANSWERS.md](./ANSWERS.md). I'm actually more proud of the web app than on my anwsers.
+I've put the answers to your personal an generic questions in [ANSWERS.md](./ANSWERS.md).
 
 ## Q3 styling
 
