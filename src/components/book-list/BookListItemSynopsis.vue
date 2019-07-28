@@ -1,5 +1,5 @@
 <template>
-  <div class="synopsis">
+  <div class="synopsis" data-cy="book-synopsis">
     <p>
       <text-highlight :queries="searchText">
         {{ getTruncatedSynopsis }}

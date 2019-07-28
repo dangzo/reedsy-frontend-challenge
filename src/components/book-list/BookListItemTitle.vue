@@ -1,5 +1,5 @@
 <template>
-  <h2>
+  <h2 data-cy="book-title">
     <!-- prettier-ignore -->
     <a href="#" @click.prevent="doEmitItemSelect">
       {{ getBookPrintableIndex }}.&nbsp;
@@ -7,7 +7,7 @@
         {{ bookTitle }}
       </text-highlight>
     </a>
-    <span class="rating">({{ bookRating }}/10)</span>
+    <span class="rating" data-cy="book-rating">({{ bookRating }}/10)</span>
   </h2>
 </template>
 

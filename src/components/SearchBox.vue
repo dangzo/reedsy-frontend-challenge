@@ -1,5 +1,5 @@
 <template>
-  <div class="search-box-container">
+  <div class="search-box-container" data-cy="search-box">
     <input
       v-model="inputValue"
       type="text"

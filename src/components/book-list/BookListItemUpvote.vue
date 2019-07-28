@@ -1,9 +1,9 @@
 <template>
-  <div class="upvote">
+  <div class="upvote" data-cy="book-upvoted-button">
     <a href="#" :class="{ upvoted: bookUpvoted }" @click.prevent>
       {{ getUpvotedText }}
     </a>
-    <span>Upvoted {{ bookUpvotes }} times</span>
+    <span data-cy="book-upvoted-text">Upvoted {{ bookUpvotes }} times</span>
   </div>
 </template>
 

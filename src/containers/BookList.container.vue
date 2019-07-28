@@ -3,7 +3,7 @@
     <!-- search box -->
     <SearchBox @input="doChangeSearchText" />
     <!-- loader -->
-    <div v-if="loadingData" class="spinner">
+    <div v-if="loadingData" class="spinner" data-cy="spinner">
       <PulseLoader color="#a27934" size="18px" />
     </div>
     <div v-else>
@@ -18,7 +18,9 @@
           @select="doSelectBook"
         />
       </div>
-      <div v-else class="no-found-text">No data found.</div>
+      <div v-else class="not-found-text" data-cy="not-found-text">
+        No data found.
+      </div>
     </div>
     <!-- pagination -->
     <BookListPagination
@@ -137,7 +139,7 @@ export default class BookListContainer extends Vue {
     }
   }
 
-  .no-found-text {
+  .not-found-text {
     text-align: center;
     margin: 80px auto;
   }

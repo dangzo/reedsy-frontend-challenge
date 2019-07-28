@@ -1,5 +1,5 @@
 <template>
-  <span class="next">
+  <span class="next" data-cy="pagination-next-link">
     <!-- prettier-ignore -->
     <a
       href="#"

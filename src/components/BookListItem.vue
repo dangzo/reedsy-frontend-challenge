@@ -1,8 +1,12 @@
 <template>
-  <div class="row book-list-item" :class="{ odd: this.index % 2 === 0 }">
+  <div
+    class="row book-list-item"
+    data-cy="book-list-item"
+    :class="{ odd: this.index % 2 === 0 }">
     <div class="container">
       <!-- Cover image (float to right) -->
       <img
+        data-cy="book-cover"
         :src="book.cover"
         :alt="`${book.title}, ${book.author}`"
         :title="`${book.title}, ${book.author}`"
@@ -19,7 +23,7 @@
       />
 
       <!-- Author -->
-      <div class="author">{{ book.author }}</div>
+      <div class="author" data-cy="book-author">{{ book.author }}</div>
 
       <!-- Synopsis -->
       <BookListItemSynopsis

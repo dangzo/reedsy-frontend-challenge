@@ -1,5 +1,5 @@
 <template>
-  <div class="pagination">
+  <div class="pagination" data-cy="pagination">
     <!-- prev link -->
     <PaginationPrevLink
       :disabled="disabled"
@@ -9,6 +9,7 @@
     <!-- all page links -->
     <span
       v-for="(page, index) in getTotalPages"
+      data-cy="pagination-page-link"
       :class="{ active: pagination.activePageIndex === index }"
       :key="`page-link-${index}`"
     >

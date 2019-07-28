@@ -1,11 +1,13 @@
 <template>
   <div class="container">
-    <div v-if="loadingData" class="spinner">
+    <div v-if="loadingData" class="spinner" data-cy="spinner">
       <PulseLoader color="#a27934" size="18px" />
     </div>
     <div v-else>
       <BookDetails v-if="!isBookEmpty()" :book="selectedBook" />
-      <div v-else class="no-found-text">No data found.</div>
+      <div v-else class="not-found-text" data-cy="not-found-text">
+        No data found.
+      </div>
     </div>
   </div>
 </template>
@@ -81,7 +83,7 @@ export default class BookDetailsContainer extends Vue {
   }
 }
 
-.no-found-text {
+.not-found-text {
   text-align: center;
   margin: auto;
   margin-top: 20%;

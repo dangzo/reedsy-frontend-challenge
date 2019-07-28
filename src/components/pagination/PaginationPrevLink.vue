@@ -1,5 +1,5 @@
 <template>
-  <span class="prev">
+  <span class="prev" data-cy="pagination-prev-link">
     <!-- prettier-ignore -->
     <a
       href="#"
