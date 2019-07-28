@@ -90,7 +90,7 @@ yarn start
 yarn build
 ```
 
-### Run your tests
+### Run e2e tests (Cypress.io)
 ```
 yarn test
 ```

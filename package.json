@@ -7,7 +7,8 @@
     "q3": "./node_modules/.bin/sass q3/scss:q3/css",
     "q3-watch": "./node_modules/.bin/sass --watch q3/scss:q3/css",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "./node_modules/.bin/cypress open -P ./e2e"
   },
   "dependencies": {
     "@types/lodash": "^4.14.136",
@@ -37,6 +38,7 @@
     "axios": "^0.19.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "cypress": "^3.4.0",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
