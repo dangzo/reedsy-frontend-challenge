@@ -30,7 +30,7 @@ const booksVuexModule = namespace("books");
     PulseLoader
   }
 })
-export default class BookList extends Vue {
+export default class BookDetailsContainer extends Vue {
   // Vuex state
   @booksVuexModule.State
   selectedBook!: Book;

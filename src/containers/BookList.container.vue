@@ -55,7 +55,7 @@ const paginationVuexModule = namespace("pagination");
     PulseLoader
   }
 })
-export default class BookList extends Vue {
+export default class BookListContainer extends Vue {
   // Vuex state
   @booksVuexModule.State
   books!: Book[];
