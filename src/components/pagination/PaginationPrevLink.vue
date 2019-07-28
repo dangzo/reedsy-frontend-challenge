@@ -3,7 +3,7 @@
     <!-- prettier-ignore -->
     <a
       href="#"
-      :class="{ disabled: isPrevLinkDisabled() }"
+      :class="{ disabled: disabled || isPrevLinkDisabled() }"
       @click.prevent="doEmitClick"
     >
       &larr; prev
@@ -18,6 +18,9 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 export default class PaginationPrevLink extends Vue {
   @Prop({ type: Number, required: true })
   activePageIndex!: number;
+
+  @Prop({ type: Boolean, required: false, default: false })
+  disabled!: boolean;
 
   // Returns true when current page index is 0
   isPrevLinkDisabled() {

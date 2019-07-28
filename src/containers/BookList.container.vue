@@ -22,6 +22,7 @@
     </div>
     <!-- pagination -->
     <BookListPagination
+      :disabled="getFilteredBooks.length < 1"
       :items-length="getFilteredBooks.length"
       :items-per-page="3"
       :search-text="searchText"

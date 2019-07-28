@@ -3,7 +3,7 @@
     <!-- prettier-ignore -->
     <a
       href="#"
-      :class="{ disabled: isNextLinkDisabled() }"
+      :class="{ disabled: disabled || isNextLinkDisabled() }"
       @click.prevent="doEmitClick"
     >
       next &rarr;
@@ -21,6 +21,9 @@ export default class PaginationNextLink extends Vue {
 
   @Prop({ type: Number, required: true })
   totalPages!: number;
+
+  @Prop({ type: Boolean, required: false, default: false })
+  disabled!: boolean;
 
   // Returns true when current page index is total pages - 1
   isNextLinkDisabled() {

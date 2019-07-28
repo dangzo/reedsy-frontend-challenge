@@ -2,6 +2,7 @@
   <div class="pagination">
     <!-- prev link -->
     <PaginationPrevLink
+      :disabled="disabled"
       :active-page-index="pagination.activePageIndex"
       @click="doSetPagination"
     />
@@ -17,6 +18,7 @@
     </span>
     <!-- next link -->
     <PaginationNextLink
+      :disabled="disabled"
       :active-page-index="pagination.activePageIndex"
       :total-pages="getTotalPages"
       @click="doSetPagination"
@@ -44,6 +46,9 @@ const paginationVuexModule = namespace("pagination");
   }
 })
 export default class BookListPagination extends Vue {
+  @Prop({ type: Boolean, required: false, default: false })
+  disabled!: boolean;
+
   @Prop({ type: Number, required: true })
   itemsLength!: number;
 
@@ -82,11 +87,13 @@ export default class BookListPagination extends Vue {
     const minIndex = this.itemsPerPage * (pageNumber - 1);
     const maxIndex = minIndex + this.itemsPerPage;
 
-    this.setPagination({
-      minIndex,
-      maxIndex,
-      activePageIndex: pageNumber - 1
-    });
+    if (!this.disabled) {
+      this.setPagination({
+        minIndex,
+        maxIndex,
+        activePageIndex: pageNumber - 1
+      });
+    }
   }
 
   created() {
