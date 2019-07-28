@@ -1,19 +1,11 @@
 <template>
   <div class="pagination">
-    <span class="prev">
-      <!--
-        Remember pagination.activePageIndex is an index,
-        while doSetPagination() expects page number
-      -->
-      <!-- prettier-ignore -->
-      <a
-        href="#"
-        :class="{ disabled: isPrevLinkDisabled() }"
-        @click.prevent="!isPrevLinkDisabled() && doSetPagination(pagination.activePageIndex)"
-      >
-        &larr; prev
-      </a>
-    </span>
+    <!-- prev link -->
+    <PaginationPrevLink
+      :active-page-index="pagination.activePageIndex"
+      @click="doSetPagination"
+    />
+    <!-- all page links -->
     <span
       v-for="(page, index) in getTotalPages"
       :class="{ active: pagination.activePageIndex === index }"
@@ -23,16 +15,12 @@
         {{ index + 1 }}
       </a>
     </span>
-    <span class="next">
-      <!-- prettier-ignore -->
-      <a
-        href="#"
-        :class="{ disabled: isNextLinkDisabled() }"
-        @click.prevent="!isNextLinkDisabled() && doSetPagination(pagination.activePageIndex + 2)"
-      >
-        next &rarr;
-      </a>
-    </span>
+    <!-- next link -->
+    <PaginationNextLink
+      :active-page-index="pagination.activePageIndex"
+      :total-pages="getTotalPages"
+      @click="doSetPagination"
+    />
   </div>
 </template>
 
@@ -40,12 +28,21 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { namespace } from "vuex-class";
 
+// Components
+import PaginationPrevLink from "@/components/pagination/PaginationPrevLink.vue";
+import PaginationNextLink from "@/components/pagination/PaginationNextLink.vue";
+
 // Data models
 import { Pagination, EmptyPagination } from "@/models/Pagination";
 
 const paginationVuexModule = namespace("pagination");
 
-@Component
+@Component({
+  components: {
+    PaginationPrevLink,
+    PaginationNextLink
+  }
+})
 export default class BookListPagination extends Vue {
   @Prop({ type: Number, required: true })
   itemsLength!: number;
@@ -69,22 +66,6 @@ export default class BookListPagination extends Vue {
       );
     }
     return 0;
-  }
-
-  // Returns true when current page index is 0
-  isPrevLinkDisabled() {
-    if (this.pagination) {
-      return this.pagination.activePageIndex === 0;
-    }
-    return false;
-  }
-
-  // Returns true when current page index is total pages - 1
-  isNextLinkDisabled() {
-    if (this.pagination) {
-      return this.pagination.activePageIndex === this.getTotalPages - 1;
-    }
-    return false;
   }
 
   doSetPagination(pageNumber: number) {
@@ -112,6 +93,8 @@ export default class BookListPagination extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/variables.scss";
+
 .pagination {
   text-align: center;
   margin: 25px auto;
