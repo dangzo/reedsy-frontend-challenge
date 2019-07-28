@@ -1,8 +1,11 @@
 <template>
   <div class="container">
-    <BookDetails v-if="!isBookEmpty()" :book="selectedBook" />
-    <div v-else class="spinner">
+    <div v-if="loadingData" class="spinner">
       <PulseLoader color="#a27934" size="18px" />
+    </div>
+    <div v-else>
+      <BookDetails v-if="!isBookEmpty()" :book="selectedBook" />
+      <div v-else class="no-found-text">No data found.</div>
     </div>
   </div>
 </template>
@@ -80,5 +83,11 @@ export default class BookList extends Vue {
 
     }
   }
+}
+
+.no-found-text {
+  text-align: center;
+  margin: auto;
+  margin-top: 20%;
 }
 </style>
