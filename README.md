@@ -75,6 +75,12 @@ Then just open ```q3/q3.html```.
 - All pages optimised for mobile
 - I added a comments section to the book page: comments are hard-coded into the `BookDetailsComments.vue` component, not nested, and the reply button does actually nothing. Avatar pictures are retrieved from `/public/images/avatars/` (relative to project root).
 
+### About tests
+
+Choosen framework for e2e tests is [Cypress.io](https://www.cypress.io/), which is a powerful UI test platform for testing UI elements and client-server interactions. Used Cypress just because it's the tool I know better for testing UIs.
+
+Test specs can be found in `./e2e/cypress/integration/`. Fixtures (static variables used during tests) can be found in `./e2e/cypress/fixtures/` instead.
+
 ### Project setup
 ```
 yarn install
