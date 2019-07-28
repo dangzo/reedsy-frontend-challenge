@@ -6,7 +6,7 @@
 yarn install
 ```
 
-### Project structure and folders organisation
+### Repository structure and folders organisation
 
 ```
 |
@@ -31,9 +31,14 @@ yarn install
 |   |- App.vue
 |   |- main.ts
 |   \- router.ts
-\- public/                  # Static files (Q3 images, SPA index.html, etc.)
+|- public/                  # Static files (Q3 images, SPA index.html, etc.)
+|- ANSWERS.md             # Answers to "About you" and "General" questions
+\- README.md                # This readme file
 ```
 
+## About you and General questions
+
+I've put the answers to your personal an generic questions in [ANSWERS.md](./ANSWERS.md). I'm actually more proud of the web app than on my anwsers.
 
 ## Q3 styling
 
@@ -75,7 +80,7 @@ Then just open ```q3/q3.html```.
 - All pages optimised for mobile
 - I added a comments section to the book page: comments are hard-coded into the `BookDetailsComments.vue` component, not nested, and the reply button does actually nothing. Avatar pictures are retrieved from `/public/images/avatars/` (relative to project root).
 
-### About tests
+### About testing
 
 Choosen framework for e2e tests is [Cypress.io](https://www.cypress.io/), which is a powerful UI test platform for testing UI elements and client-server interactions. Used Cypress just because it's the tool I know better for testing UIs.
 
