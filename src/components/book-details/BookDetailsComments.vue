@@ -1,9 +1,10 @@
 <template>
-  <div class="comments">
+  <div class="comments" data-cy="book-comments">
     <h3>{{ comments.length }} comments</h3>
     <div
       v-for="(comment, index) in comments"
       class="comment"
+      data-cy="book-comment"
       :key="`comment-${index}`"
     >
       <div class="avatar">

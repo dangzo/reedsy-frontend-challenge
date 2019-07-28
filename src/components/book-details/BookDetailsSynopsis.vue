@@ -1,5 +1,5 @@
 <template>
-  <div class="synopsis">
+  <div class="synopsis" data-cy="book-synopsis">
     <h3>Synopsis</h3>
     <p>{{ bookSynopsis }}</p>
   </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="book-container">
     <!-- Title -->
-    <h1>{{ book.title }}</h1>
+    <h1 data-cy="book-title">{{ book.title }}</h1>
 
     <!-- Author -->
-    <div class="author">{{ book.author }}</div>
+    <div class="author" data-cy="book-author">{{ book.author }}</div>
 
     <!-- Upvote -->
     <BookDetailsUpvote
@@ -14,6 +14,7 @@
 
     <!-- Cover image (float to title's right) -->
     <img
+       data-cy="book-cover"
       :src="book.cover"
       :alt="`${book.title}, ${book.author}`"
       :title="`${book.title}, ${book.author}`"
@@ -23,7 +24,7 @@
     <BookDetailsSynopsis :book-synopsis="book.synopsis" />
 
     <!-- Rating -->
-    <div class="rating">Rating {{ book.rating }}/10</div>
+    <div class="rating" data-cy="book-rating">Rating {{ book.rating }}/10</div>
 
     <!-- Comments -->
     <BookDetailsComments />
