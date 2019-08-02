@@ -24,7 +24,7 @@ Tell us about one of your commercial projects with Vue.js or AngularJS.
 
 #### 2.1. What kind of front end projects do you enjoy working on? Why?
 
-> I've actually always had an hard time understanding this question. I mean, I love to write frontend code and love doing it with Vue. It should be pretty straightforward that everybody would like more working on features they find interesting, in spite of writing route code for insteance.
+> I've actually always had an hard time understanding this question. I mean, I love to write frontend code and love doing it with Vue. It should be pretty straightforward that everybody would like more working on features they find interesting, in spite of writing (~~route code~~ => routine code) for insteance.
 > 
 > Looking at my past projects, I can tell you I always liked a bit more adding details or improving existing features than creating big app components from scratch. Probably because the second one involves a much more thoughtful and organisationl approach, like trying and experimenting with UI/UX never used before. In either cases, I like a lot when my work has a huge impact on the results (a completely new look for that component, this new super cool drag'n'drop between the list items, that new dark theme for nightly usage, etc.).
 
@@ -34,7 +34,7 @@ Tell us about one of your commercial projects with Vue.js or AngularJS.
 > 
 > I'm still one of those who always close any single tag with a slash, like \<img \/\>, even though this has become not strictly needed with HTML5.
 > 
-> I'm instead pretty glad we now only need a simple <!DOCTYPE html> at the to decleare an HTML5 document, instead of all those long and complicated atrtibutes that I bet nobody always remember.
+> I'm instead pretty glad we now only need a simple \<!DOCTYPE html\> at the to decleare an HTML5 document, instead of all those long and complicated atrtibutes that I bet nobody always remember.
 > 
 > I can cite also all those semantic tags like \<header\> and \<footer\>, which I really like to see in action. Forcing myself to style a \<div\> or a \<span\> and use semantic tags like \<header\> for semantic is a good practice that I like pretty much.
 > 
